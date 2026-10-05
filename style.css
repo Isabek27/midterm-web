@@ -902,5 +902,5 @@ ul { padding: 0; list-style: none; }
     .line-wrap { padding: 0 6px; }
     .line-plot { height: 170px; margin-left: 30px; }
     .line-labels { margin-left: 30px; font-size: 0.625rem; }
-    .line-labels span:nth-child(even) { display: none; }   /* меньше подписей на узком экране */
+    .line-labels span:nth-child(even) { display: none; }  
 }
