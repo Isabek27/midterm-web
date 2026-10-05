@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="AI-прогнозы MatchIQ Pro: тренд формы команд и вероятности исходов.">
+    <title>AI Прогнозы — MatchIQ Pro</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <a class="logo" href="index.html">
+                    <span class="logo-icon"><i class="fa-solid fa-futbol" aria-hidden="true"></i></span>
+                    <span class="logo-text">MatchIQ<span>Pro</span></span>
+                </a>
+                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#sidebarMenu" aria-controls="sidebarMenu"
+                        aria-expanded="false" aria-label="Открыть меню">
+                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <div class="collapse d-lg-flex sidebar-body" id="sidebarMenu">
+                <nav aria-label="Основная навигация">
+                    <p class="menu-label">Меню</p>
+                    <ul>
+                        <li>
+                            <a class="side-link" href="index.html">
+                                <i class="fa-solid fa-chart-pie" aria-hidden="true"></i>
+                                <span>Дашборд</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="side-link" href="match.html">
+                                <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+                                <span>Матчи</span>
+                                <span class="live-pill">LIVE</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="side-link" href="standings.html">
+                                <i class="fa-solid fa-trophy" aria-hidden="true"></i>
+                                <span>Турниры</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="side-link" href="players.html">
+                                <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
+                                <span>Игроки</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <p class="menu-label">Advanced</p>
+                    <ul>
+                        <li>
+                            <a class="side-link active" href="ai.html" aria-current="page">
+                                <i class="fa-solid fa-brain icon-purple" aria-hidden="true"></i>
+                                <span>AI Аналитика</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="side-link" href="contact.html">
+                                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                                <span>Контакты</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="sidebar-user">
+                    <img src="img/user.svg" alt="Аватар пользователя" width="36" height="36">
+                    <div>
+                        <strong>Data Scientist</strong>
+                        <small>Pro аккаунт</small>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <div class="page">
+            <header class="top-header">
+                <h1>AI Прогнозы</h1>
+                <form class="search-box" role="search" onsubmit="return false">
+                    <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                    <input type="search" id="siteSearch" placeholder="Найти команду или игрока..." aria-label="Поиск по сайту">
+                </form>
+            </header>
+
+            <main class="main-content">
+                <section class="ai-banner">
+                    <div>
+                        <h2><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>MatchIQ Predictive Engine</h2>
+                        <p>Оценка вероятности исходов на основе машинного обучения</p>
+                    </div>
+                    <span class="ai-accuracy">Точность модели: 87%</span>
+                </section>
+
+                <section class="panel">
+                    <h2 class="panel-title-caps">Тренд игровой формы (xG формула)</h2>
+
+                    <div class="legend" aria-hidden="true">
+                        <span><i></i>Команда А (Форма)</span>
+                        <span><i class="alt"></i>Команда Б (Форма)</span>
+                    </div>
+
+                    <figure class="line-wrap m-0" role="img" aria-label="Линейный график формы двух команд за последние пять матчей">
+                        <div class="line-plot" style="--steps: 8">
+                            <div class="grid-line" style="--i: 0"><span>0,8</span></div>
+                            <div class="grid-line" style="--i: 1"><span>1,0</span></div>
+                            <div class="grid-line" style="--i: 2"><span>1,2</span></div>
+                            <div class="grid-line" style="--i: 3"><span>1,4</span></div>
+                            <div class="grid-line" style="--i: 4"><span>1,6</span></div>
+                            <div class="grid-line" style="--i: 5"><span>1,8</span></div>
+                            <div class="grid-line" style="--i: 6"><span>2,0</span></div>
+                            <div class="grid-line" style="--i: 7"><span>2,2</span></div>
+                            <div class="grid-line" style="--i: 8"><span>2,4</span></div>
+                            <svg class="line-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                                <defs>
+                                    <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.45"/>
+                                        <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.05"/>
+                                    </linearGradient>
+                                </defs>
+                                <path class="line-area" d="M0.00,75.00 C8.00,70.00 12.06,61.26 20.00,62.50 C28.06,63.76 32.41,85.99 40.00,81.25 C48.41,75.99 51.59,50.64 60.00,37.50 C67.59,25.64 72.00,26.25 80.00,18.75 C88.00,11.25 92.00,7.50 100.00,0.00 L100,100 L0,100 Z"/>
+                                <path class="line-b" d="M0.00,31.25 C8.00,36.25 11.96,39.98 20.00,43.75 C27.96,47.48 32.09,45.06 40.00,50.00 C48.09,55.06 52.00,61.25 60.00,68.75 C68.00,76.25 71.94,81.20 80.00,87.50 C87.94,93.70 92.00,95.00 100.00,100.00"/>
+                                <path class="line-a" d="M0.00,75.00 C8.00,70.00 12.06,61.26 20.00,62.50 C28.06,63.76 32.41,85.99 40.00,81.25 C48.41,75.99 51.59,50.64 60.00,37.50 C67.59,25.64 72.00,26.25 80.00,18.75 C88.00,11.25 92.00,7.50 100.00,0.00"/>
+                            </svg>
+                            <span class="point" style="--x: 0.0%; --y: 25.00%" title="1.2"></span>
+                            <span class="point" style="--x: 20.0%; --y: 37.50%" title="1.4"></span>
+                            <span class="point" style="--x: 40.0%; --y: 18.75%" title="1.1"></span>
+                            <span class="point" style="--x: 60.0%; --y: 62.50%" title="1.8"></span>
+                            <span class="point" style="--x: 80.0%; --y: 81.25%" title="2.1"></span>
+                            <span class="point" style="--x: 100.0%; --y: 100.00%" title="2.4"></span>
+                        </div>
+                        <div class="line-labels" aria-hidden="true">
+                            <span style="--x: 0.0%">Матч -5</span>
+                            <span style="--x: 20.0%">Матч -4</span>
+                            <span style="--x: 40.0%">Матч -3</span>
+                            <span style="--x: 60.0%">Матч -2</span>
+                            <span style="--x: 80.0%">Матч -1</span>
+                            <span style="--x: 100.0%">Сейчас</span>
+                        </div>
+                    </figure>
+                </section>
+
+                <h2 class="section-caption">Прогнозы на топ-матчи тура</h2>
+                <section class="row gap-custom" aria-label="Прогнозы на матчи">
+                    <div class="col-md-6 col-xl-4" data-search>
+                        <article class="panel predict-card">
+                            <p class="predict-league">Английская Премьер-лига</p>
+                            <div class="predict-teams">
+                                <span><img src="img/ars.svg" alt="Логотип Арсенал" width="26" height="26">Арсенал</span>
+                                <em>vs</em>
+                                <span>Челси<img src="img/che.svg" alt="Логотип Челси" width="26" height="26"></span>
+                            </div>
+                            <div class="prob-bar" role="img" aria-label="Вероятности: победа Арсенал 54%, ничья 25%, победа Челси 21%">
+                                <i style="--w: 54%"></i><i style="--w: 25%"></i><i style="--w: 21%"></i>
+                            </div>
+                            <div class="prob-legend">
+                                <span><strong>54%</strong>Арсенал</span>
+                                <span><strong>25%</strong>Ничья</span>
+                                <span><strong>21%</strong>Челси</span>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-md-6 col-xl-4" data-search>
+                        <article class="panel predict-card">
+                            <p class="predict-league">Лига Чемпионов</p>
+                            <div class="predict-teams">
+                                <span><img src="img/bay.svg" alt="Логотип Бавария" width="26" height="26">Бавария</span>
+                                <em>vs</em>
+                                <span>Ман. Сити<img src="img/mci.svg" alt="Логотип Ман. Сити" width="26" height="26"></span>
+                            </div>
+                            <div class="prob-bar" role="img" aria-label="Вероятности: победа Бавария 33%, ничья 24%, победа Ман. Сити 43%">
+                                <i style="--w: 33%"></i><i style="--w: 24%"></i><i style="--w: 43%"></i>
+                            </div>
+                            <div class="prob-legend">
+                                <span><strong>33%</strong>Бавария</span>
+                                <span><strong>24%</strong>Ничья</span>
+                                <span><strong>43%</strong>Ман. Сити</span>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-md-6 col-xl-4" data-search>
+                        <article class="panel predict-card">
+                            <p class="predict-league">Английская Премьер-лига</p>
+                            <div class="predict-teams">
+                                <span><img src="img/liv.svg" alt="Логотип Ливерпуль" width="26" height="26">Ливерпуль</span>
+                                <em>vs</em>
+                                <span>Астон Вилла<img src="img/avl.svg" alt="Логотип Астон Вилла" width="26" height="26"></span>
+                            </div>
+                            <div class="prob-bar" role="img" aria-label="Вероятности: победа Ливерпуль 61%, ничья 22%, победа Астон Вилла 17%">
+                                <i style="--w: 61%"></i><i style="--w: 22%"></i><i style="--w: 17%"></i>
+                            </div>
+                            <div class="prob-legend">
+                                <span><strong>61%</strong>Ливерпуль</span>
+                                <span><strong>22%</strong>Ничья</span>
+                                <span><strong>17%</strong>Астон Вилла</span>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

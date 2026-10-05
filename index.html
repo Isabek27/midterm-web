@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="MatchIQ Pro — обзор футбольной статистики: xG, live-матчи, игрок недели.">
+    <title>Дашборд — MatchIQ Pro</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <a class="logo" href="index.html">
+                    <span class="logo-icon"><i class="fa-solid fa-futbol" aria-hidden="true"></i></span>
+                    <span class="logo-text">MatchIQ<span>Pro</span></span>
+                </a>
+                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#sidebarMenu" aria-controls="sidebarMenu"
+                        aria-expanded="false" aria-label="Открыть меню">
+                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <div class="collapse d-lg-flex sidebar-body" id="sidebarMenu">
+                <nav aria-label="Основная навигация">
+                    <p class="menu-label">Меню</p>
+                    <ul>
+                        <li>
+                            <a class="side-link active" href="index.html" aria-current="page">
+                                <i class="fa-solid fa-chart-pie" aria-hidden="true"></i>
+                                <span>Дашборд</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="side-link" href="match.html">
+                                <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+                                <span>Матчи</span>
+                                <span class="live-pill">LIVE</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="side-link" href="standings.html">
+                                <i class="fa-solid fa-trophy" aria-hidden="true"></i>
+                                <span>Турниры</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="side-link" href="players.html">
+                                <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
+                                <span>Игроки</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <p class="menu-label">Advanced</p>
+                    <ul>
+                        <li>
+                            <a class="side-link" href="ai.html">
+                                <i class="fa-solid fa-brain icon-purple" aria-hidden="true"></i>
+                                <span>AI Аналитика</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="side-link" href="contact.html">
+                                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                                <span>Контакты</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="sidebar-user">
+                    <img src="img/user.svg" alt="Аватар пользователя" width="36" height="36">
+                    <div>
+                        <strong>Data Scientist</strong>
+                        <small>Pro аккаунт</small>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <div class="page">
+            <header class="top-header">
+                <h1>Обзор статистики</h1>
+                <form class="search-box" role="search" onsubmit="return false">
+                    <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                    <input type="search" id="siteSearch" placeholder="Найти команду или игрока..." aria-label="Поиск по сайту">
+                </form>
+            </header>
+
+            <main class="main-content">
+                <section class="dashboard-grid" aria-label="Ключевые показатели">
+                    <article class="stat-card">
+                        <div>
+                            <p class="stat-label">Обработано матчей</p>
+                            <p class="stat-value">24,592</p>
+                            <p class="stat-note text-green"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i> +120 за неделю</p>
+                        </div>
+                        <span class="stat-icon green"><i class="fa-solid fa-database" aria-hidden="true"></i></span>
+                    </article>
+                    <article class="stat-card">
+                        <div>
+                            <p class="stat-label">Live Матчи <i class="fa-solid fa-circle live-dot" aria-hidden="true"></i></p>
+                            <p class="stat-value">8</p>
+                            <p class="stat-note">АПЛ, Ла Лига, Серия А</p>
+                        </div>
+                        <span class="stat-icon red"><i class="fa-solid fa-tower-broadcast" aria-hidden="true"></i></span>
+                    </article>
+                    <article class="stat-card">
+                        <div>
+                            <p class="stat-label">Средний xG за матч</p>
+                            <p class="stat-value">2.74</p>
+                            <p class="stat-note">На основе топ-5 лиг Европы</p>
+                        </div>
+                        <span class="stat-icon blue"><i class="fa-solid fa-bullseye" aria-hidden="true"></i></span>
+                    </article>
+                </section>
+
+                <div class="row gap-custom">
+                    <section class="col-lg-8">
+                        <div class="panel h-100">
+                            <div class="panel-head">
+                                <h2 class="panel-title">Голы по турам (АПЛ)</h2>
+                                <a class="chip-link" href="standings.html">Подробнее</a>
+                            </div>
+
+                            <figure class="m-0" role="img" aria-label="Столбчатая диаграмма: количество голов в АПЛ по турам">
+                                <div class="chart-plot" style="--steps: 7">
+                                    <div class="grid-line" style="--i: 0"><span>0</span></div>
+                                    <div class="grid-line" style="--i: 1"><span>5</span></div>
+                                    <div class="grid-line" style="--i: 2"><span>10</span></div>
+                                    <div class="grid-line" style="--i: 3"><span>15</span></div>
+                                    <div class="grid-line" style="--i: 4"><span>20</span></div>
+                                    <div class="grid-line" style="--i: 5"><span>25</span></div>
+                                    <div class="grid-line" style="--i: 6"><span>30</span></div>
+                                    <div class="grid-line" style="--i: 7"><span>35</span></div>
+                                    <div class="bars">
+                                        <div class="bar-slot"><div class="bar" style="--v: 24" data-value="24" title="Тур 1: 24 голов"></div></div>
+                                        <div class="bar-slot"><div class="bar" style="--v: 31" data-value="31" title="Тур 2: 31 голов"></div></div>
+                                        <div class="bar-slot"><div class="bar" style="--v: 28" data-value="28" title="Тур 3: 28 голов"></div></div>
+                                        <div class="bar-slot"><div class="bar" style="--v: 19" data-value="19" title="Тур 4: 19 голов"></div></div>
+                                        <div class="bar-slot"><div class="bar" style="--v: 34" data-value="34" title="Тур 5: 34 голов"></div></div>
+                                        <div class="bar-slot"><div class="bar" style="--v: 22" data-value="22" title="Тур 6: 22 голов"></div></div>
+                                        <div class="bar-slot"><div class="bar" style="--v: 29" data-value="29" title="Тур 7: 29 голов"></div></div>
+                                        <div class="bar-slot"><div class="bar" style="--v: 25" data-value="25" title="Тур 8: 25 голов"></div></div>
+                                    </div>
+                                </div>
+                                <div class="x-labels" aria-hidden="true">
+                                    <span>Тур 1</span>
+                                    <span>Тур 2</span>
+                                    <span>Тур 3</span>
+                                    <span>Тур 4</span>
+                                    <span>Тур 5</span>
+                                    <span>Тур 6</span>
+                                    <span>Тур 7</span>
+                                    <span>Тур 8</span>
+                                </div>
+                            </figure>
+                        </div>
+                    </section>
+
+                    <aside class="col-lg-4">
+                        <article class="panel potw">
+                            <h2 class="panel-title-caps">Игрок недели (алгоритм)</h2>
+                            <img class="potw-photo" src="img/player.svg" alt="Фото игрока Эрлинг Холанд" width="86" height="86">
+                            <h3>Эрлинг Холанд</h3>
+                            <p class="potw-team">Манчестер Сити</p>
+                            <div class="potw-stats">
+                                <div><small>xG</small><strong class="text-green">1.84</strong></div>
+                                <div><small>Удары</small><strong>6</strong></div>
+                            </div>
+                        </article>
+                    </aside>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Турнирная таблица АПЛ с ожидаемыми очками (xPts).">
+    <title>Турнирные таблицы — MatchIQ Pro</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <a class="logo" href="index.html">
+                    <span class="logo-icon"><i class="fa-solid fa-futbol" aria-hidden="true"></i></span>
+                    <span class="logo-text">MatchIQ<span>Pro</span></span>
+                </a>
+                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#sidebarMenu" aria-controls="sidebarMenu"
+                        aria-expanded="false" aria-label="Открыть меню">
+                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <div class="collapse d-lg-flex sidebar-body" id="sidebarMenu">
+                <nav aria-label="Основная навигация">
+                    <p class="menu-label">Меню</p>
+                    <ul>
+                        <li>
+                            <a class="side-link" href="index.html">
+                                <i class="fa-solid fa-chart-pie" aria-hidden="true"></i>
+                                <span>Дашборд</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="side-link" href="match.html">
+                                <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+                                <span>Матчи</span>
+                                <span class="live-pill">LIVE</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="side-link active" href="standings.html" aria-current="page">
+                                <i class="fa-solid fa-trophy" aria-hidden="true"></i>
+                                <span>Турниры</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="side-link" href="players.html">
+                                <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
+                                <span>Игроки</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <p class="menu-label">Advanced</p>
+                    <ul>
+                        <li>
+                            <a class="side-link" href="ai.html">
+                                <i class="fa-solid fa-brain icon-purple" aria-hidden="true"></i>
+                                <span>AI Аналитика</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="side-link" href="contact.html">
+                                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                                <span>Контакты</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="sidebar-user">
+                    <img src="img/user.svg" alt="Аватар пользователя" width="36" height="36">
+                    <div>
+                        <strong>Data Scientist</strong>
+                        <small>Pro аккаунт</small>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <div class="page">
+            <header class="top-header">
+                <h1>Турнирные таблицы</h1>
+                <form class="search-box" role="search" onsubmit="return false">
+                    <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                    <input type="search" id="siteSearch" placeholder="Найти команду или игрока..." aria-label="Поиск по сайту">
+                </form>
+            </header>
+
+            <main class="main-content">
+                <section class="panel table-panel">
+                    <div class="table-panel-head">
+                        <h2>Турнирная таблица</h2>
+                        <label class="visually-hidden" for="leagueSelect">Выберите лигу</label>
+                        <select class="dark-select" id="leagueSelect">
+                            <option>Английская Премьер-лига 23/24</option>
+                        </select>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="custom-table">
+                            <caption class="visually-hidden">Турнирная таблица Английской Премьер-лиги 23/24</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col" class="team-col">Команда</th>
+                                    <th scope="col" title="Игры">И</th>
+                                    <th scope="col" title="Победы">В</th>
+                                    <th scope="col" title="Ничьи">Н</th>
+                                    <th scope="col" title="Поражения">П</th>
+                                    <th scope="col" class="xpts" title="Ожидаемые очки">xPts</th>
+                                    <th scope="col" title="Разница мячей">РМ</th>
+                                    <th scope="col" class="points-col" title="Очки">О</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-search>
+                                    <td class="rank leader">1</td>
+                                    <td class="team-col"><span class="team-cell"><img src="img/liv.svg" alt="Логотип Ливерпуль" width="24" height="24">Ливерпуль</span></td>
+                                    <td class="num-muted">26</td>
+                                    <td>18</td>
+                                    <td>6</td>
+                                    <td>2</td>
+                                    <td class="xpts">58.4</td>
+                                    <td>+38</td>
+                                    <td class="points-col">60</td>
+                                </tr>
+                                <tr data-search>
+                                    <td class="rank">2</td>
+                                    <td class="team-col"><span class="team-cell"><img src="img/mci.svg" alt="Логотип Манчестер Сити" width="24" height="24">Манчестер Сити</span></td>
+                                    <td class="num-muted">26</td>
+                                    <td>18</td>
+                                    <td>5</td>
+                                    <td>3</td>
+                                    <td class="xpts">61.2</td>
+                                    <td>+33</td>
+                                    <td class="points-col">59</td>
+                                </tr>
+                                <tr data-search>
+                                    <td class="rank">3</td>
+                                    <td class="team-col"><span class="team-cell"><img src="img/ars.svg" alt="Логотип Арсенал" width="24" height="24">Арсенал</span></td>
+                                    <td class="num-muted">26</td>
+                                    <td>18</td>
+                                    <td>4</td>
+                                    <td>4</td>
+                                    <td class="xpts">55.8</td>
+                                    <td>+39</td>
+                                    <td class="points-col">58</td>
+                                </tr>
+                                <tr data-search>
+                                    <td class="rank">4</td>
+                                    <td class="team-col"><span class="team-cell"><img src="img/avl.svg" alt="Логотип Астон Вилла" width="24" height="24">Астон Вилла</span></td>
+                                    <td class="num-muted">26</td>
+                                    <td>16</td>
+                                    <td>4</td>
+                                    <td>6</td>
+                                    <td class="xpts">42.1</td>
+                                    <td>+21</td>
+                                    <td class="points-col">52</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
